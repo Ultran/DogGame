@@ -1,0 +1,38 @@
+
+section.quiz{
+display: flex;
+justify-content: center;
+align-items: left;
+flex-direction: column;
+
+}
+
+.quiz p {
+    color: red;
+    align-self: center;
+}
+
+ul {
+    color: blue;
+    text-transform: uppercase;
+    margin: 20px 0px 0 20px;
+    line-height: 3rem;
+    
+}
+
+ul li {
+    color: white;
+    text-transform: uppercase;
+    line-height: 3rem;
+}
+
+.quiz div {
+    color: white;
+    font-size: 50px;
+    align-self: center;
+}
+
+
+.onClick {
+    color: green;
+}
