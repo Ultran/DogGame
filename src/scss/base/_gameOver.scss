@@ -1,0 +1,187 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  background-clip: padding-box;
+}
+
+.skull_container {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.deathInfo {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: yellow;
+  margin-bottom: 50px;
+
+}
+
+.playAfterDeath {
+  width: 50%;
+  margin: 10px auto;
+  cursor: pointer;
+  
+}
+.playAfterDeath:hover {
+  background-color: yellowgreen;
+}
+
+
+
+.skull {
+  position: relative;
+  width: 16em;
+  height: 10em;
+  border: solid .5em black;
+  border-radius: 5em 5em 3em 3em;
+  background: white;
+  z-index: 4;
+}
+
+.teeth {
+  position: absolute;
+  bottom: -2.75em;
+  left: 2.5em;
+  z-index: 7;
+  text-align: center;
+}
+
+.tooth {
+  display: inline-block;
+  margin-left: -.55em;
+  width: 3em;
+  height: 3em;
+  background: white;
+  border: solid .5em black;
+  border-top-width: 0;
+  border-radius: 0 0 1em 1em;
+}
+
+.tooth:first-child {
+  margin-left: 0;
+}
+
+.eye {
+  position: absolute;
+  top: 4em;
+  left: 2em;
+  width: 4em;
+  height: 2.5em;
+  background: black;
+  border: solid .5em black;
+  border-radius: .5em .5em 2em 2em;
+  animation: rainbow .5s infinite;
+}
+
+.eye + .eye {
+  left: auto;
+  right: 2em;
+}
+
+.nose {
+  position: absolute;
+  bottom: .5em;
+  left: 50%;
+  margin-left: -1em;
+  width: 2em;
+  height: 2em;
+  border-top: solid .5em black;
+  border-left: solid .5em black;
+  border-right: solid .5em transparent;
+  border-bottom: solid .5em transparent;
+  border-radius: .5em;
+  transform: rotate(45deg);
+}
+
+.bones {
+  transform: rotate(-45deg) translate(.75em, -4em);
+}
+
+.bone {
+  position: absolute;
+  width: 20em;
+  height: 3em;
+  border-top: solid .5em black;
+  border-bottom: solid .5em black;
+  background: white;
+  z-index: 1;
+}
+
+.bone + .bone {
+  transform: rotate(90deg);
+}
+
+.bone-inner:after,
+.bone-inner:before {
+  content: '';
+  position: absolute;
+  top: -1.5em;
+  left: -1.5em;
+  width: 3em;
+  height: 3em;
+  border: solid .5em black;
+  border-right-color: white;
+  border-radius: 50%;
+  background: white;
+  transform: rotate(45deg);
+}
+
+.bone-inner:after {
+  top: auto;
+  bottom: -1.5em;
+  left: -1.5em;
+  transform: rotate(-45deg);
+}
+
+.bone-inner + .bone-inner:before {
+  left: auto;
+  right: -1.5em;
+  transform: rotate(135deg);
+}
+
+.bone-inner + .bone-inner:after {
+  left: auto;
+  right: -1.5em;
+  transform: rotate(-135deg);
+}
+
+@keyframes rainbow {
+  0% {
+    background: red;
+  }
+  25% {
+    background: blue;
+  }
+  50% {
+    background: green;
+  }
+  75% {
+    background: yellow;
+  }
+  100% {
+    background: red;
+  }
+}
+
+// html,
+// body {
+//   width: 100%;
+//   height: 100%;
+//   margin: 0;
+// }
+
+// html {
+//   font-size: 3vmin;
+// }
+
+// body {
+//   background: linear-gradient(to bottom, HotPink, salmon);
+//   overflow: hidden;
+// }

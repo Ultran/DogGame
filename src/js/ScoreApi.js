@@ -15,10 +15,23 @@ export default class ScoreApi {
   removeHeart() {
     console.log("helo");
     this.deaths++;
+    if (this.deaths === 3) {
+      this.addSkull();
+    }
     this.heartsAnimation = document.querySelector(
       `.heart:nth-child(${this.deaths})`
     );
     this.heartsAnimation.classList.remove("fill");
     console.log(this.heartsAnimation);
+  }
+
+  addSkull() {
+    const skullOn = document.querySelector(".skull_container");
+    skullOn.style.display = "block";
+  }
+
+  removeSkull() {
+    const skullOn = document.querySelector(".skull_container");
+    skullOn.style.display = "none";
   }
 }

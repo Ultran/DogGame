@@ -15,15 +15,29 @@ flex-direction: column;
 ul {
     color: blue;
     text-transform: uppercase;
-    margin: 20px 0px 0 20px;
+    margin: 20px 20px 20px 20px;
     line-height: 3rem;
+    text-align: center;
     
 }
 
 ul li {
+    text-align: left;
     color: white;
-    text-transform: uppercase;
+    text-transform: initial;
     line-height: 3rem;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-top: 1px solid white
+}
+
+ul li:hover {
+    background-color: red;
+}
+
+ul li:nth-child(3) {
+    border-bottom: 1px solid white;
 }
 
 .quiz div {
