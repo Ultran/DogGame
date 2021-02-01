@@ -8,6 +8,8 @@ export default class GetApiData {
     this.apiSrc = "https://dog.ceo/api";
     this.arrayOfBreeds = [];
     this.arayOfThree = [];
+    this.deaths = 0;
+    this.points = 0;
     this.currentDogOnPicture = "";
     this.liElementA = document.querySelector(".a");
     this.liElementB = document.querySelector(".b");

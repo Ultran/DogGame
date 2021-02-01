@@ -2,10 +2,9 @@
 
 export default class ScoreApi {
   constructor() {
-    this.hearts = 3;
+    this.deaths = 0;
     this.points = 0;
     this.pointsContainer = document.querySelector(".points");
-    this.heartsAnimation = document.querySelector(".heart");
   }
 
   addPoint() {
@@ -15,7 +14,10 @@ export default class ScoreApi {
 
   removeHeart() {
     console.log("helo");
-    this.hearts--;
+    this.deaths++;
+    this.heartsAnimation = document.querySelector(
+      `.heart:nth-child(${this.deaths})`
+    );
     this.heartsAnimation.classList.remove("fill");
     console.log(this.heartsAnimation);
   }
