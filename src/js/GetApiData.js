@@ -2,6 +2,7 @@
 
 import ScoreApi from "./ScoreApi.js";
 
+confetti.start();
 export default class GetApiData {
   constructor(score = new ScoreApi()) {
     this.score = score;
@@ -31,7 +32,7 @@ export default class GetApiData {
       if (this.liElementA.textContent === this.currentDogOnPicture) {
         this.score.addPoint();
         this.liElementA.classList.add("onClick");
-        setTimeout(() => this.importFullListOfDogs(), 5000);
+        setTimeout(() => this.importFullListOfDogs(), 1000);
       } else {
         this.score.removeHeart();
       }
@@ -40,7 +41,7 @@ export default class GetApiData {
       if (this.liElementB.textContent === this.currentDogOnPicture) {
         this.score.addPoint();
         this.liElementB.classList.add("onClick");
-        setTimeout(() => this.importFullListOfDogs(), 5000);
+        setTimeout(() => this.importFullListOfDogs(), 1000);
       } else {
         this.score.removeHeart();
       }
@@ -49,7 +50,7 @@ export default class GetApiData {
       if (this.liElementC.textContent === this.currentDogOnPicture) {
         this.score.addPoint();
         this.liElementC.classList.add("onClick");
-        setTimeout(() => this.importFullListOfDogs(), 5000);
+        setTimeout(() => this.importFullListOfDogs(), 1000);
       } else {
         this.score.removeHeart();
       }
