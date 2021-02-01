@@ -3,8 +3,8 @@
     display: grid;
     width: 1000px;
     margin: 0 auto;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 40px 80px 60vh 40px;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 40px 80px 60vh 40px;
     column-gap: 10px;
     row-gap: 15px;
 }

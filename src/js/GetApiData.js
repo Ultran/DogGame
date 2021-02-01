@@ -2,7 +2,7 @@
 
 import ScoreApi from "./ScoreApi.js";
 
-confetti.start();
+// confetti.start();
 export default class GetApiData {
   constructor(score = new ScoreApi()) {
     this.score = score;
@@ -127,4 +127,3 @@ export default class GetApiData {
 }
 
 const next = new GetApiData();
-next.importFullListOfDogs();
