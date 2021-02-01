@@ -12,6 +12,11 @@ export default class ScoreApi {
     this.pointsContainer.textContent = this.points;
   }
 
+  reset() {
+    this.deaths = 0;
+    this.points = 0;
+  }
+
   removeHeart() {
     console.log("helo");
     this.deaths++;
@@ -22,7 +27,13 @@ export default class ScoreApi {
       `.heart:nth-child(${this.deaths})`
     );
     this.heartsAnimation.classList.remove("fill");
-    console.log(this.heartsAnimation);
+  }
+
+  addHearts() {
+    for (let i = 1; i < 4; i++) {
+      this.heartsAnimation = document.querySelector(`.heart:nth-child(${i})`);
+      this.heartsAnimation.classList.add("fill");
+    }
   }
 
   addSkull() {
@@ -31,7 +42,9 @@ export default class ScoreApi {
   }
 
   removeSkull() {
+    this.reset();
     const skullOn = document.querySelector(".skull_container");
     skullOn.style.display = "none";
+    this.addHearts();
   }
 }

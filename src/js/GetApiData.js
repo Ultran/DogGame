@@ -15,6 +15,15 @@ export default class GetApiData {
     this.liElementB = document.querySelector(".b");
     this.liElementC = document.querySelector(".c");
     this.pictureEL = document.querySelector(".dogPicture");
+    this.playAfterDeathButton = document.querySelector(".playAfterDeath");
+    this.playAfterDeath();
+  }
+
+  playAfterDeath() {
+    this.playAfterDeathButton.addEventListener("click", () => {
+      this.score.removeSkull();
+      this.importFullListOfDogs();
+    });
   }
 
   listeners() {
