@@ -21,6 +21,8 @@ export default class GetApiData {
         this.score.addPoint();
         this.liElementA.classList.add("onClick");
         setTimeout(() => this.importFullListOfDogs(), 5000);
+      } else {
+        this.score.removeHeart();
       }
     });
     this.liElementB.addEventListener("click", () => {
@@ -28,6 +30,8 @@ export default class GetApiData {
         this.score.addPoint();
         this.liElementB.classList.add("onClick");
         setTimeout(() => this.importFullListOfDogs(), 5000);
+      } else {
+        this.score.removeHeart();
       }
     });
     this.liElementC.addEventListener("click", () => {
@@ -35,6 +39,8 @@ export default class GetApiData {
         this.score.addPoint();
         this.liElementC.classList.add("onClick");
         setTimeout(() => this.importFullListOfDogs(), 5000);
+      } else {
+        this.score.removeHeart();
       }
     });
   }
