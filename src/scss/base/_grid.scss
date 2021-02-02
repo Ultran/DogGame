@@ -10,7 +10,7 @@
 }
 
 section {
-    border: 1px solid grey;
+    // border: 1px solid grey;
     border-radius: 10px;
 }
 
@@ -20,6 +20,15 @@ section.menu {
 
 section.score {
     grid-column: 1 /  span 2;
+      border: 1px solid grey;
+}
+
+section.pictureContainer{
+    border: 1px solid grey;
+}
+
+section.quiz {
+    border: 1px solid grey;
 }
 
 section.footer {

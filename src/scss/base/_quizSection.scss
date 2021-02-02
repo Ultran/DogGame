@@ -13,8 +13,7 @@ flex-direction: column;
 }
 
 ul {
-    color: blue;
-    text-transform: uppercase;
+    color: rgb(243, 191, 191);
     margin: 20px 20px 20px 20px;
     line-height: 3rem;
     text-align: center;
@@ -29,7 +28,10 @@ ul li {
     font-size: 1.5rem;
     letter-spacing: 2px;
     cursor: pointer;
-    border-top: 1px solid white
+    border-top: 1px solid white;
+    transition: 0.25s;
+    padding-left: 10px;
+    font-family: 'Caveat', cursive;
 }
 
 ul li:hover {
@@ -48,5 +50,9 @@ ul li:nth-child(3) {
 
 
 .onClick {
-    color: green;
+    background-color: green;
+}
+
+.onClickFalse {
+    background-color: red;
 }

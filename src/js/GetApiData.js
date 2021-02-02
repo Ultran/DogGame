@@ -18,12 +18,21 @@ export default class GetApiData {
     this.pictureEL = document.querySelector(".dogPicture");
     this.playAfterDeathButton = document.querySelector(".playAfterDeath");
     this.playAfterDeath();
+    this.letsPlay();
+  }
+
+  letsPlay() {
+    document.querySelector(".letsPlay").addEventListener("click", () => {
+      console.log("hello");
+      document.querySelector(".startGame").style.display = "none";
+      this.importFullListOfDogs();
+    });
   }
 
   playAfterDeath() {
     this.playAfterDeathButton.addEventListener("click", () => {
       this.score.removeSkull();
-      this.importFullListOfDogs();
+      window.location.reload();
     });
   }
 
@@ -32,7 +41,8 @@ export default class GetApiData {
       if (this.liElementA.textContent === this.currentDogOnPicture) {
         this.score.addPoint();
         this.liElementA.classList.add("onClick");
-        setTimeout(() => this.importFullListOfDogs(), 1000);
+        this.reset();
+        setTimeout(() => this.importFullListOfDogs(), 2000);
       } else {
         this.score.removeHeart();
       }
@@ -41,7 +51,8 @@ export default class GetApiData {
       if (this.liElementB.textContent === this.currentDogOnPicture) {
         this.score.addPoint();
         this.liElementB.classList.add("onClick");
-        setTimeout(() => this.importFullListOfDogs(), 1000);
+        this.reset();
+        setTimeout(() => this.importFullListOfDogs(), 2000);
       } else {
         this.score.removeHeart();
       }
@@ -50,7 +61,8 @@ export default class GetApiData {
       if (this.liElementC.textContent === this.currentDogOnPicture) {
         this.score.addPoint();
         this.liElementC.classList.add("onClick");
-        setTimeout(() => this.importFullListOfDogs(), 1000);
+        this.reset();
+        setTimeout(() => this.importFullListOfDogs(), 2000);
       } else {
         this.score.removeHeart();
       }
@@ -72,13 +84,14 @@ export default class GetApiData {
     document.querySelector(".quiz__answers").appendChild(this.liElementC);
     this.arrayOfBreeds = [];
     this.arayOfThree = [];
-    this.liElementA.classList.remove("onClick");
-    this.liElementB.classList.remove("onClick");
+    setTimeout(() => this.liElementA.classList.remove("onClick"), 2000);
+    setTimeout(() => this.liElementB.classList.remove("onClick"), 2000);
+    setTimeout(() => this.liElementB.classList.remove("onClick"), 2000);
+
     this.liElementC.classList.remove("onClick");
   }
 
   importFullListOfDogs() {
-    this.reset();
     return fetch(`${this.apiSrc}/breeds/list/all`)
       .then((resp) => resp.json())
       .then((data) => data.message)
