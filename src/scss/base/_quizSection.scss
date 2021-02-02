@@ -17,6 +17,10 @@ ul {
     margin: 20px 20px 20px 20px;
     line-height: 3rem;
     text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    line-height: 4rem;
+
     
 }
 
@@ -24,18 +28,19 @@ ul li {
     text-align: left;
     color: white;
     text-transform: initial;
-    line-height: 3rem;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
+    line-height: 4rem;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
     cursor: pointer;
     border-top: 1px solid white;
     transition: 0.25s;
     padding-left: 10px;
-    font-family: 'Caveat', cursive;
+    font-family: 'Lemonada', cursive;
 }
 
 ul li:hover {
-    background-color: red;
+    font-size: 1.6rem;
+    color: gainsboro;
 }
 
 ul li:nth-child(3) {

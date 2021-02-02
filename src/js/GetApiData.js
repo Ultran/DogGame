@@ -16,9 +16,24 @@ export default class GetApiData {
     this.liElementB = document.querySelector(".b");
     this.liElementC = document.querySelector(".c");
     this.pictureEL = document.querySelector(".dogPicture");
+    this.timerCount = document.querySelector(".quiz__time");
+    this.timeLeft = 10;
     this.playAfterDeathButton = document.querySelector(".playAfterDeath");
     this.playAfterDeath();
     this.letsPlay();
+  }
+
+  timer() {
+    setInterval(() => {
+      this.timeLeft--;
+      this.timerCount.textContent = this.timeLeft + " sec";
+      if (this.timeLeft === 0) {
+        this.timeLeft = 11;
+        this.score.removeHeart();
+        this.importFullListOfDogs();
+        this.reset();
+      }
+    }, 1500);
   }
 
   letsPlay() {
@@ -26,6 +41,7 @@ export default class GetApiData {
       console.log("hello");
       document.querySelector(".startGame").style.display = "none";
       this.importFullListOfDogs();
+      this.timer();
     });
   }
 
@@ -45,6 +61,9 @@ export default class GetApiData {
         setTimeout(() => this.importFullListOfDogs(), 2000);
       } else {
         this.score.removeHeart();
+        this.liElementA.classList.add("onClickFalse");
+        this.reset();
+        setTimeout(() => this.importFullListOfDogs(), 2000);
       }
     });
     this.liElementB.addEventListener("click", () => {
@@ -55,6 +74,9 @@ export default class GetApiData {
         setTimeout(() => this.importFullListOfDogs(), 2000);
       } else {
         this.score.removeHeart();
+        this.liElementB.classList.add("onClickFalse");
+        this.reset();
+        setTimeout(() => this.importFullListOfDogs(), 2000);
       }
     });
     this.liElementC.addEventListener("click", () => {
@@ -65,11 +87,15 @@ export default class GetApiData {
         setTimeout(() => this.importFullListOfDogs(), 2000);
       } else {
         this.score.removeHeart();
+        this.liElementC.classList.add("onClickFalse");
+        this.reset();
+        setTimeout(() => this.importFullListOfDogs(), 2000);
       }
     });
   }
 
   reset() {
+    this.timeLeft = 11;
     document.querySelector(".quiz__answers").removeChild(this.liElementA);
     document.querySelector(".quiz__answers").removeChild(this.liElementB);
     document.querySelector(".quiz__answers").removeChild(this.liElementC);
@@ -86,9 +112,10 @@ export default class GetApiData {
     this.arayOfThree = [];
     setTimeout(() => this.liElementA.classList.remove("onClick"), 2000);
     setTimeout(() => this.liElementB.classList.remove("onClick"), 2000);
-    setTimeout(() => this.liElementB.classList.remove("onClick"), 2000);
-
-    this.liElementC.classList.remove("onClick");
+    setTimeout(() => this.liElementC.classList.remove("onClick"), 2000);
+    setTimeout(() => this.liElementA.classList.remove("onClickFalse"), 2000);
+    setTimeout(() => this.liElementB.classList.remove("onClickFalse"), 2000);
+    setTimeout(() => this.liElementC.classList.remove("onClickFalse"), 2000);
   }
 
   importFullListOfDogs() {
@@ -131,7 +158,9 @@ export default class GetApiData {
         const randomImage = Math.floor(Math.random() * src.length);
         this.pictureEL.setAttribute("src", src[randomImage]);
       })
-      .then(() => this.listeners());
+      .then(() => {
+        this.listeners();
+      });
   }
 
   displayImage() {
