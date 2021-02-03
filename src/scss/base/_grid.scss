@@ -4,7 +4,7 @@
     width: 1000px;
     margin: 0 auto;
     grid-template-columns: 3fr 2fr;
-    grid-template-rows: 40px 80px 70vh 40px;
+    grid-template-rows: 80px 70vh 40px;
     column-gap: 10px;
     row-gap: 15px;
 }
@@ -14,9 +14,6 @@ section {
     border-radius: 10px;
 }
 
-section.menu {
-    grid-column: 1/ span 2;
-}
 
 section.score {
     grid-column: 1 /  span 2;
@@ -25,6 +22,7 @@ section.score {
 
 section.pictureContainer{
     border: 1px solid grey;
+    min-height: 50vh;
 }
 
 section.quiz {

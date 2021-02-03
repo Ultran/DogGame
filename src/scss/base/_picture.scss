@@ -5,3 +5,21 @@
     align-items: center;
     justify-content: center;
 }
+
+.dogPicture {
+    max-height: 100%;
+    z-index: 2;
+}
+
+.dogPicture__background {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    background-color: yellow;
+    z-index: 1;
+    
+    background-size: cover;
+
+    padding: 15px;
+    filter: blur(10px);
+}
