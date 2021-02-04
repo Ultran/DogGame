@@ -1,0 +1,718 @@
+@import url(https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@400;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inconsolata:wght@400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Lemonada:wght@400;700&display=swap);
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  border: none;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary,
+main {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  background: transparent;
+  text-decoration: none;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+textarea:focus,
+input:focus {
+  outline: 0;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.wrapper {
+  position: relative;
+  display: grid;
+  width: 1000px;
+  margin: 0 auto;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 80px 75vh 20px;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 15px;
+}
+
+section {
+  border-radius: 10px;
+}
+
+section.score {
+  grid-column: 1/span 2;
+}
+
+section.pictureContainer {
+  border: 1px solid grey;
+  min-height: 50vh;
+}
+
+section.quiz {
+  border: 1px solid grey;
+}
+
+section.footer {
+  grid-column: 1/span 2;
+  text-align: right;
+}
+
+body {
+  font-family: "Lemonada", cursive;
+}
+
+/**
+ * Dirty hacks, yes internet explorer, we are looking at you
+*/
+.header h1 {
+  color: white;
+  font-size: 40px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pictureContainer {
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.pictureContainer__picture {
+  max-height: 100%;
+  z-index: 2;
+}
+.pictureContainer__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 110%;
+  margin: -5%;
+  background-size: cover;
+  padding: 15px;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+section.quiz {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.quiz p {
+  color: red;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+ul {
+  color: #f3bfbf;
+  margin: 20px 20px 20px 20px;
+  line-height: 3rem;
+  text-align: center;
+  font-family: "Caveat", cursive;
+  font-size: 1.5rem;
+  line-height: 4rem;
+}
+
+ul li {
+  text-align: left;
+  color: white;
+  text-transform: initial;
+  line-height: 4rem;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-top: 1px solid white;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  padding-left: 10px;
+  font-family: "Lemonada", cursive;
+}
+
+ul li:hover {
+  font-size: 1.6rem;
+  color: gainsboro;
+}
+
+ul li:nth-child(3) {
+  border-bottom: 1px solid white;
+}
+
+.quiz div {
+  color: white;
+  font-size: 50px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.onClick {
+  background-color: green;
+}
+
+.onClickFalse {
+  background-color: red;
+}
+
+.score {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.points-container {
+  font-size: 2rem;
+  color: white;
+  margin-right: 80px;
+  color: yellow;
+  font-weight: bolds;
+}
+
+.heart {
+  position: relative;
+  top: 5px;
+  width: 50px;
+  -webkit-animation: pulse 1s ease infinite;
+          animation: pulse 1s ease infinite;
+  margin-right: 30px;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.fill {
+  fill: red;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-clip: padding-box;
+}
+
+.skull_container {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.deathInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  background-color: #f1e646;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.playAfterDeath {
+  width: 50%;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.playAfterDeath:hover {
+  background-color: yellowgreen;
+}
+
+.skull {
+  position: relative;
+  width: 16em;
+  height: 10em;
+  border: solid 0.5em black;
+  border-radius: 5em 5em 3em 3em;
+  background: white;
+  z-index: 4;
+}
+
+.teeth {
+  position: absolute;
+  bottom: -2.75em;
+  left: 2.5em;
+  z-index: 7;
+  text-align: center;
+}
+
+.tooth {
+  display: inline-block;
+  margin-left: -0.55em;
+  width: 3em;
+  height: 3em;
+  background: white;
+  border: solid 0.5em black;
+  border-top-width: 0;
+  border-radius: 0 0 1em 1em;
+}
+
+.tooth:first-child {
+  margin-left: 0;
+}
+
+.eye {
+  position: absolute;
+  top: 4em;
+  left: 2em;
+  width: 4em;
+  height: 2.5em;
+  background: black;
+  border: solid 0.5em black;
+  border-radius: 0.5em 0.5em 2em 2em;
+  -webkit-animation: rainbow 0.5s infinite;
+          animation: rainbow 0.5s infinite;
+}
+
+.eye + .eye {
+  left: auto;
+  right: 2em;
+}
+
+.nose {
+  position: absolute;
+  bottom: 0.5em;
+  left: 50%;
+  margin-left: -1em;
+  width: 2em;
+  height: 2em;
+  border-top: solid 0.5em black;
+  border-left: solid 0.5em black;
+  border-right: solid 0.5em transparent;
+  border-bottom: solid 0.5em transparent;
+  border-radius: 0.5em;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.bones {
+  -webkit-transform: rotate(-45deg) translate(0.75em, -4em);
+          transform: rotate(-45deg) translate(0.75em, -4em);
+}
+
+.bone {
+  position: absolute;
+  width: 20em;
+  height: 3em;
+  border-top: solid 0.5em black;
+  border-bottom: solid 0.5em black;
+  background: white;
+  z-index: 1;
+}
+
+.bone + .bone {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.bone-inner:after,
+.bone-inner:before {
+  content: "";
+  position: absolute;
+  top: -1.5em;
+  left: -1.5em;
+  width: 3em;
+  height: 3em;
+  border: solid 0.5em black;
+  border-right-color: white;
+  border-radius: 50%;
+  background: white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.bone-inner:after {
+  top: auto;
+  bottom: -1.5em;
+  left: -1.5em;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.bone-inner + .bone-inner:before {
+  left: auto;
+  right: -1.5em;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.bone-inner + .bone-inner:after {
+  left: auto;
+  right: -1.5em;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+@-webkit-keyframes rainbow {
+  0% {
+    background: red;
+  }
+  25% {
+    background: blue;
+  }
+  50% {
+    background: green;
+  }
+  75% {
+    background: yellow;
+  }
+  100% {
+    background: red;
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background: red;
+  }
+  25% {
+    background: blue;
+  }
+  50% {
+    background: green;
+  }
+  75% {
+    background: yellow;
+  }
+  100% {
+    background: red;
+  }
+}
+.winnerContainer {
+  display: none;
+  position: absolute;
+  min-width: 400px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: -webkit-gradient(linear, left top, right top, from(#3f87a6), color-stop(#ebf8e1), to(#f69d3c));
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+  z-index: 5;
+  font-family: "Lemonada", cursive;
+  font-size: 1, 5rem;
+  line-height: 2rem;
+  color: #F69F40;
+}
+.winnerContainer__image {
+  margin-top: 40px;
+  width: 300px;
+}
+.winnerContainer__play-button {
+  margin-top: 30px;
+  width: 80px;
+  height: 40px;
+  color: #a44af8;
+  font-family: "Caveat", cursive;
+  border-radius: 5px;
+  border: 2px solid #e9baba;
+  cursor: pointer;
+}
+.winnerContainer__play-button:hover {
+  width: 86px;
+  height: 43px;
+  margin-top: 27px;
+  font-weight: bold;
+}
+
+.startGame {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e66465), to(#9198e5));
+  background-image: linear-gradient(#e66465, #9198e5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.9;
+  color: white;
+  z-index: 3;
+}
+.startGame h1, .startGame h2 {
+  line-height: 3rem;
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.startGame button {
+  margin-top: 20px;
+  display: block;
+  width: 60px;
+  height: 40px;
+  font-family: "Caveat", cursive;
+  font-weight: bold;
+  color: blueviolet;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px groove #8e50c0;
+}
+.startGame button:hover {
+  background-color: yellow;
+  margin-top: 15px;
+  width: 65px;
+  height: 44px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.footer {
+  font-size: 10px;
+}
+.footer__author {
+  color: #595bce;
+}
+
+body {
+  background-color: #694141;
+}
