@@ -32,11 +32,15 @@
     font-family: 'VT323';
     width: 45px;
     height: 30px;
+    background-color: rgb(83, 81, 81);
+    border: 1px solid rgb(160, 60, 60);
+    transition: 0.1s;
     &:hover {
       font-family: 'VT323';
-      color: green;
+      color: rgb(136, 156, 19);
       font-size: 1.1rem;
       width: 50px;
+    
     }
   }
 }
