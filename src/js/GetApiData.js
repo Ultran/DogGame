@@ -9,7 +9,7 @@ export default class GetApiData {
     this.arrayOfBreeds = [];
     this.arayOfThree = [];
     this.deaths = 0;
-    this.points = 1;
+    this.points = 0;
     this.timeLeft = 10;
     this.currentDogOnPicture = "";
     this.liElementA = document.querySelector(".a");
@@ -37,7 +37,7 @@ export default class GetApiData {
 
   getPointsAndWin() {
     this.points++;
-    if (this.points === 1) {
+    if (this.points === 10) {
       this.winnerInfo();
     }
   }
