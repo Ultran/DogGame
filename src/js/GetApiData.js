@@ -37,7 +37,7 @@ export default class GetApiData {
 
   getPointsAndWin() {
     this.points++;
-    if (this.points === 3) {
+    if (this.points === 10) {
       this.winnerInfo();
     }
   }
