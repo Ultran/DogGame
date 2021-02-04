@@ -2,7 +2,6 @@
 
 import ScoreApi from "./ScoreApi.js";
 
-// confetti.start();
 export default class GetApiData {
   constructor(score = new ScoreApi()) {
     this.score = score;
@@ -11,16 +10,36 @@ export default class GetApiData {
     this.arayOfThree = [];
     this.deaths = 0;
     this.points = 0;
+    this.timeLeft = 10;
     this.currentDogOnPicture = "";
     this.liElementA = document.querySelector(".a");
     this.liElementB = document.querySelector(".b");
     this.liElementC = document.querySelector(".c");
-    this.pictureEL = document.querySelector(".dogPicture");
+    this.pictureEL = document.querySelector(".pictureContainer__picture");
+    this.backgroundEL = document.querySelector(".pictureContainer__background");
     this.timerCount = document.querySelector(".quiz__time");
-    this.timeLeft = 10;
     this.playAfterDeathButton = document.querySelector(".playAfterDeath");
     this.playAfterDeath();
     this.letsPlay();
+  }
+
+  winnerInfo() {
+    const winnerContainer = document.querySelector(".winnerContainer");
+    const playAgainButton = document.querySelector(
+      ".winnerContainer__play-button"
+    );
+    winnerContainer.style.display = "flex";
+    confetti.start();
+    playAgainButton.addEventListener("click", () => {
+      window.location.reload();
+    });
+  }
+
+  getPointsAndWin() {
+    this.points++;
+    if (this.points === 3) {
+      this.winnerInfo();
+    }
   }
 
   timer() {
@@ -38,7 +57,6 @@ export default class GetApiData {
 
   letsPlay() {
     document.querySelector(".letsPlay").addEventListener("click", () => {
-      console.log("hello");
       document.querySelector(".startGame").style.display = "none";
       this.importFullListOfDogs();
       this.timer();
@@ -57,6 +75,7 @@ export default class GetApiData {
       if (this.liElementA.textContent === this.currentDogOnPicture) {
         this.score.addPoint();
         this.liElementA.classList.add("onClick");
+        this.getPointsAndWin();
         this.reset();
         setTimeout(() => this.importFullListOfDogs(), 2000);
       } else {
@@ -70,6 +89,7 @@ export default class GetApiData {
       if (this.liElementB.textContent === this.currentDogOnPicture) {
         this.score.addPoint();
         this.liElementB.classList.add("onClick");
+        this.getPointsAndWin();
         this.reset();
         setTimeout(() => this.importFullListOfDogs(), 2000);
       } else {
@@ -83,6 +103,7 @@ export default class GetApiData {
       if (this.liElementC.textContent === this.currentDogOnPicture) {
         this.score.addPoint();
         this.liElementC.classList.add("onClick");
+        this.getPointsAndWin();
         this.reset();
         setTimeout(() => this.importFullListOfDogs(), 2000);
       } else {
@@ -157,6 +178,7 @@ export default class GetApiData {
       .then((src) => {
         const randomImage = Math.floor(Math.random() * src.length);
         this.pictureEL.setAttribute("src", src[randomImage]);
+        this.backgroundEL.style.backgroundImage = `url("${src[randomImage]}")`;
       })
       .then(() => {
         this.listeners();

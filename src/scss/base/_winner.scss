@@ -1,4 +1,45 @@
-.winner {
-    // display: none;
-    
+.winnerContainer {
+    display: none;
+    position: absolute;
+    min-width: 400px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+    z-index: 5;
+    font-family: 'Lemonada', cursive;
+    font-size: 1,5rem;
+    // font-weight: bold;
+    line-height: 2rem;
+    color: #F69F40;
+
+    &__image {
+        margin-top: 40px;
+        width: 300px;
+
+    }
+
+    &__play-button {
+    margin-top: 30px;
+    width: 80px;
+    height: 40px;
+    color: rgb(164, 74, 248);
+    font-family: 'Caveat', cursive;
+    border-radius: 5px;
+    border: 2px solid rgb(233, 186, 186);
+    cursor: pointer;
+    &:hover{
+        width: 86px;
+        height: 43px;
+        margin-top: 27px;
+        font-weight: bold;
+    }
+
+    }
+
 }

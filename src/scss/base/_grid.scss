@@ -1,7 +1,9 @@
 
 .wrapper {
+    position: relative;
     display: grid;
     width: 1000px;
+    border: 1px solid black;
     margin: 0 auto;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: 80px 70vh 40px;
