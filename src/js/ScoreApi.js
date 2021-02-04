@@ -37,14 +37,11 @@ export default class ScoreApi {
   }
 
   addSkull() {
-    const skullOn = document.querySelector(".skull_container");
-    skullOn.style.display = "block";
-  }
-
-  removeSkull() {
-    this.reset();
-    const skullOn = document.querySelector(".skull_container");
-    skullOn.style.display = "none";
-    this.addHearts();
+    const gameOverContainer = document.querySelector(".game-over-container");
+    gameOverContainer.style.display = "flex";
+    const pictureEL = document.querySelector(".pictureContainer");
+    pictureEL.style.display = "none";
+    const quiz = document.querySelector(".quiz");
+    quiz.style.display = "none";
   }
 }

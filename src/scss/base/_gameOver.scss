@@ -1,173 +1,67 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  background-clip: padding-box;
-}
-
-.skull_container {
+.game-over-container {
+  position: absolute;
   display: none;
-  z-index: 2;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.deathInfo {
-  display: flex;
   flex-direction: column;
-  position: relative;
-  background-color: rgb(241, 230, 70);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 3;
+  top: 10%;
+  left: 30%;
+  width: 40%;
+  height: 80%;
   border-radius: 5px;
-  margin-bottom: 50px;
-  text-align: center;
-
-}
-
-.playAfterDeath {
-  width: 50%;
-  margin: 10px auto;
-  cursor: pointer;
-  
-}
-.playAfterDeath:hover {
-  background-color: yellowgreen;
-}
-
-
-
-.skull {
-  position: relative;
-  width: 16em;
-  height: 10em;
-  border: solid .5em black;
-  border-radius: 5em 5em 3em 3em;
-  background: white;
-  z-index: 4;
-}
-
-.teeth {
-  position: absolute;
-  bottom: -2.75em;
-  left: 2.5em;
-  z-index: 7;
-  text-align: center;
-}
-
-.tooth {
-  display: inline-block;
-  margin-left: -.55em;
-  width: 3em;
-  height: 3em;
-  background: white;
-  border: solid .5em black;
-  border-top-width: 0;
-  border-radius: 0 0 1em 1em;
-}
-
-.tooth:first-child {
-  margin-left: 0;
-}
-
-.eye {
-  position: absolute;
-  top: 4em;
-  left: 2em;
-  width: 4em;
-  height: 2.5em;
-  background: black;
-  border: solid .5em black;
-  border-radius: .5em .5em 2em 2em;
-  animation: rainbow .5s infinite;
-}
-
-.eye + .eye {
-  left: auto;
-  right: 2em;
-}
-
-.nose {
-  position: absolute;
-  bottom: .5em;
-  left: 50%;
-  margin-left: -1em;
-  width: 2em;
-  height: 2em;
-  border-top: solid .5em black;
-  border-left: solid .5em black;
-  border-right: solid .5em transparent;
-  border-bottom: solid .5em transparent;
-  border-radius: .5em;
-  transform: rotate(45deg);
-}
-
-.bones {
-  transform: rotate(-45deg) translate(.75em, -4em);
-}
-
-.bone {
-  position: absolute;
-  width: 20em;
-  height: 3em;
-  border-top: solid .5em black;
-  border-bottom: solid .5em black;
-  background: white;
-  z-index: 1;
-}
-
-.bone + .bone {
-  transform: rotate(90deg);
-}
-
-.bone-inner:after,
-.bone-inner:before {
-  content: '';
-  position: absolute;
-  top: -1.5em;
-  left: -1.5em;
-  width: 3em;
-  height: 3em;
-  border: solid .5em black;
-  border-right-color: white;
-  border-radius: 50%;
-  background: white;
-  transform: rotate(45deg);
-}
-
-.bone-inner:after {
-  top: auto;
-  bottom: -1.5em;
-  left: -1.5em;
-  transform: rotate(-45deg);
-}
-
-.bone-inner + .bone-inner:before {
-  left: auto;
-  right: -1.5em;
-  transform: rotate(135deg);
-}
-
-.bone-inner + .bone-inner:after {
-  left: auto;
-  right: -1.5em;
-  transform: rotate(-135deg);
-}
-
-@keyframes rainbow {
-  0% {
-    background: red;
+  opacity: 0.8;
+  background-color: rgb(20, 20, 20);
+  color:rgb(180, 20, 73);
+  font-family: 'VT323';
+  & img {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    border-radius: 50%;
+    align-self: center;
+    align-content: center;
   }
-  25% {
-    background: blue;
+  & button {
+    margin-top: 10%;
+    cursor: pointer;
+    color: red;
+    font-family: 'VT323';
+    width: 45px;
+    height: 30px;
+    &:hover {
+      font-family: 'VT323';
+      color: green;
+      font-size: 1.1rem;
+      width: 50px;
+    }
   }
-  50% {
-    background: green;
-  }
-  75% {
-    background: yellow;
-  }
-  100% {
-    background: red;
-  }
+}
+
+@mixin anim($name, $dur, $iterate) {
+  animation-name: $name;
+  animation-duration: $dur;
+  animation-iteration-count:$iterate;
+}
+
+html,body{padding:0;margin:0;background:black;}
+
+.deathInfo__gameOver {
+  font-family: 'VT323', ;
+  font-size:3em;
+  text-align:center;
+  @include anim(example, 1s, infinite);
+}
+
+@keyframes example {
+  0%{color:rgb(190, 44, 183); text-shadow:0 0 20px rgb(128, 0, 85)}
+  25%{color:rgb(128, 0, 85); text-shadow:2px 2px 2px rgb(255, 0, 157); transform: translate(-2px,1px)}
+  40%{color:rgb(255, 0, 191); text-shadow:none; transform: translate(0,0)}
+  50%{color:rgb(128, 0, 96); text-shadow:5px 5px 2px rgb(255, 0, 170), -5px -5px 2px red; transform: translate(0px,5px)}
+  70%{color:rgb(255, 153, 0); text-shadow:none; transform: translate(0,0)}
+  80%{color:rgb(255, 166, 0); text-shadow:0 0 20px rgb(128, 0, 96); transform: translate(-2px,1px)}
+  100%{color:rgb(255, 0, 170); text-shadow:none;}
 }

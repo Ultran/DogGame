@@ -18,7 +18,7 @@ export default class GetApiData {
     this.pictureEL = document.querySelector(".pictureContainer__picture");
     this.backgroundEL = document.querySelector(".pictureContainer__background");
     this.timerCount = document.querySelector(".quiz__time");
-    this.playAfterDeathButton = document.querySelector(".playAfterDeath");
+    this.playAfterDeathButton = document.querySelector(".deathInfo__play-btn");
     this.playAfterDeath();
     this.letsPlay();
   }
@@ -65,7 +65,6 @@ export default class GetApiData {
 
   playAfterDeath() {
     this.playAfterDeathButton.addEventListener("click", () => {
-      this.score.removeSkull();
       window.location.reload();
     });
   }
