@@ -12,9 +12,9 @@
 - [x] CSS Felxbox
 - [x] BEM methology
 - [x] OOP
-- [x] Webpack 5 boilerplate:
-- [x] 'game over' scull animation:
-- [x] confetti animation:
+- [x] Webpack 5 boilerplate: https://github.com/WeAreAthlon/frontend-webpack-boilerplate
+- [x] 'game over' scull animation: https://codepen.io/andreasnylin/pen/dNVoLg
+- [x] confetti animation: https://github.com/mathusummut/confetti.js/
 
 ### **ToDO:**
 
