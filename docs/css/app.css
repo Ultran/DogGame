@@ -186,7 +186,7 @@ input {
   width: 1000px;
   margin: 0 auto;
   grid-template-columns: 3fr 2fr;
-  grid-template-rows: 80px 75vh 20px;
+  grid-template-rows: 17vh 73vh 5vh;
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
@@ -317,7 +317,7 @@ ul li {
 }
 
 ul li:hover {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: gainsboro;
 }
 
