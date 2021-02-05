@@ -1,6 +1,6 @@
 # Doggos Game build with JS.
 
-## 🎥 Live: click and PLAY [here](https://ultran.github.io/DogGame/) to see project.
+## 🎥 Live: click and PLAY [here](https://ultran.github.io/DogGame/)
 
 ## **For this project I used:**
 
@@ -11,9 +11,7 @@
 - [x] CSS Grid
 - [x] CSS Felxbox
 - [x] BEM methology
-- [x] OOP
 - [x] Webpack 5 boilerplate: https://github.com/WeAreAthlon/frontend-webpack-boilerplate
-- [x] 'game over' skull animation: https://codepen.io/andreasnylin/pen/dNVoLg
 - [x] confetti animation: https://github.com/mathusummut/confetti.js/
 
 ### **ToDO:**
