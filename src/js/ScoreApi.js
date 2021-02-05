@@ -43,5 +43,8 @@ export default class ScoreApi {
     pictureEL.style.display = "none";
     const quiz = document.querySelector(".quiz");
     quiz.style.display = "none";
+
+    const footer = document.querySelector(".footer");
+    footer.style.display = "none";
   }
 }
