@@ -1,6 +1,6 @@
 # Doggos Game build with JS.
 
-#### 🎥 Live: click [here](https://ultran.github.io/DogGame/) to see project.
+## 🎥 Live: click and PLAY [here](https://ultran.github.io/DogGame/) to see project.
 
 ## **For this project I used:**
 
